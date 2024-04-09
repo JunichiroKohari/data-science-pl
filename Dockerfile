@@ -1,3 +1,3 @@
-FROM python:3.11
-
-RUN pip install jupyterlab pandas matplotlib scikit-learn
+FROM --platform=linux/amd64 library/python:3.11
+COPY requirements.txt requirements.lock ./
+RUN pip install -r requirements.txt -c requirements.lock
